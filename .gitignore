@@ -1,33 +1,26 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
+# Arquivos gerados pelo IDE
+.idea/
 *.iml
 *.ipr
+*.iws
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# Arquivos compilados
+target/
+bin/
+out/
+
+# Arquivos de log
+*.log
+
+# Arquivos temporários
+*~
+.#*
+
+# Arquivos específicos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Dependências geradas pelo Maven ou Gradle
+# (Adicione outras pastas específicas do seu projeto, se necessário)
+lib/
 build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
-.vscode/
