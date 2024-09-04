@@ -1,13 +1,9 @@
 package com.example.criandoapis.controllers;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.doThrow;
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.List;
 import java.util.UUID;
 import java.util.ArrayList;
@@ -18,19 +14,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
-
 import com.example.criandoapis.entities.User;
-import com.example.criandoapis.exceptions.UserNotFoundException;
-import com.example.criandoapis.exceptions.UsernameAlreadyExistsException;
 import com.example.criandoapis.services.UserService;
 
 @ExtendWith(MockitoExtension.class)
