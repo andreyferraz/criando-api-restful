@@ -61,6 +61,12 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Spring Actuator -->
+        <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
         <!-- Spring Security Test -->
         <dependency>
             <groupId>org.springframework.security</groupId>

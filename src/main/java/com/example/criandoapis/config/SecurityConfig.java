@@ -16,22 +16,12 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
-                        .requestMatchers("/api/users/**").authenticated()
-                        .anyRequest().permitAll()  // Permite todas as outras requisições
-                )
-                .httpBasic();
+            .authorizeHttpRequests((requests) -> requests
+                .requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**", "/api/users/**").permitAll()
+                .anyRequest().permitAll()
+            )
+            .csrf().disable(); // Desativa CSRF, se necessário para testes
         return http.build();
-    }
-
-    @Bean
-    public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
-        var user = User.withUsername("user")
-                       .password(passwordEncoder.encode("password"))
-                       .roles("USER")
-                       .build();
-        return new InMemoryUserDetailsManager(user);
     }
 
     @Bean
@@ -39,3 +29,4 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 }
+
