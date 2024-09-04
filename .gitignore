@@ -1,26 +1,15 @@
-# Arquivos gerados pelo IDE
-.idea/
-*.iml
-*.ipr
-*.iws
-
-# Arquivos compilados
-target/
-bin/
-out/
-
-# Arquivos de log
+out
+.classpath
+.project
+.settings
+.metadata
 *.log
-
-# Arquivos temporários
+*.zip
+*.class
+*.swp
+target
+classes
+build
+bin
+classes
 *~
-.#*
-
-# Arquivos específicos do sistema operacional
-.DS_Store
-Thumbs.db
-
-# Dependências geradas pelo Maven ou Gradle
-# (Adicione outras pastas específicas do seu projeto, se necessário)
-lib/
-build/
