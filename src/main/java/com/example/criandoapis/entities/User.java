@@ -1,22 +1,33 @@
 package com.example.criandoapis.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 
+import java.util.UUID;
 
 @Entity
-@Data 
-@Getter
-@Setter
+@Table(name = "app_user")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO) // Gera UUID automaticamente
+    @Column(name = "id", updatable = false, nullable = false)
+    private UUID id;
 
+    @Column(name = "username", unique = true, nullable = false)
     private String username;
-    private String password;   
+
+    @Column(name = "password", nullable = false)
+    private String password;
 }
