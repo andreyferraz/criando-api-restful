@@ -42,7 +42,7 @@ public class UserService {
     public User editUser(User user){
         UUID id = user.getId();
         User existingUser = userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
+                .orElseThrow(() -> new UserNotFoundException("User not found with id: " + id));
                 existingUser.setUsername(user.getUsername());
                 existingUser.setPassword(user.getPassword());
         User updatedUser = userRepository.save(existingUser);
