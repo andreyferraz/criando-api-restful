@@ -46,9 +46,6 @@ public class UserController {
 
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable UUID id, @RequestBody User user){
-        if(!id.equals(user.getId())){
-            throw new IllegalArgumentException("ID do usuário não corresponde ao ID fornecido");
-        }
         User editedUser = userService.editUser(user);
         return new ResponseEntity<>(editedUser, HttpStatus.OK);
     }
